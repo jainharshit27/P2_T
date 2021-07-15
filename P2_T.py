@@ -1,11 +1,11 @@
 import pygame
 
 pygame.init()
-clock=pygame.time.Clock()
 
 screen = pygame.display.set_mode((400,400))
 
 b1 = pygame.Rect(100,100,50,50)
+w1 = pygame.Rect(250,100,50,50)
 
 b1_y_change = 1
 
@@ -20,9 +20,11 @@ while True:
         b1_y_change = 1
     if b1.y >= 250:
         b1_y_change = -1
-        
+    
     b1.y = b1.y + b1_y_change
     
     pygame.draw.rect(screen,(0,0,0),b1)
+    pygame.draw.rect(screen,(255,255,255),w1)
   
     pygame.display.update()
+    pygame.time.delay(3)
